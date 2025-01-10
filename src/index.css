@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;800&family=VT323&display=swap');
+
+:root {
+  --primary: #12bca2;
+  --secondary: #6d15df;
+  --accent: #ff9800; /* New accent color for highlights */
+  --light-gray: #f2f2f2;
+  --dark-gray: #333;
+  --border-radius: 8px;
+  --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  --font-family: 'Poppins', sans-serif;
+  --max-width: 1200px;
+  --form-max-width: 480px;
+}
+
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: var(--font-family);
+  background: var(--light-gray);
+  color: var(--dark-gray);
+}
+
+h1, h2, h3 {
+  margin: 0;
+  font-weight: 600;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Navigation */
+nav {
+  background: var(--primary);
+  padding: 15px 20px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: #fff;
+  margin: 0 15px;
+  font-weight: 500;
+  font-size: 1.1em;
+  display: inline-block;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+nav h1 {
+  color: #fff;
+  font-size: 2em;
+  font-weight: 800;
+}
+
+/* Page Container */
+.page {
+  max-width: var(--max-width);
+  margin: 40px auto;
+  padding: 20px;
+}
+
+/* Smoothie Grid */
+.smoothie-grid {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+.smoothie-card {
+  background: #fff;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.smoothie-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+.smoothie-card h3 {
+  font-size: 1.4em; /* Adjusted font size for the title */
+  color: var(--primary);
+  font-weight: 600;
+  margin-bottom: 10px;
+  word-wrap: break-word; /* Prevents title from overflowing */
+  white-space: normal; /* Allow multi-line if needed */
+}
+
+.smoothie-card p {
+  font-size: 1.1em;
+  line-height: 1.6;
+  color: var(--dark-gray);
+}
+
+.smoothie-card .rating {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: var(--secondary);
+  color: #fff;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.1em; /* Adjusted font size for rating */
+  font-weight: 600;
+}
+
+.smoothie-card .buttons {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.smoothie-card i {
+  color: #bbb;
+  margin-left: 15px;
+  font-size: 1.5em;
+  padding: 8px;
+  background: #f0f0f0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.smoothie-card i:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Forms */
+/* Forms */
+form {
+  background: #fff;
+  padding: 30px;
+  max-width: var(--form-max-width);
+  margin: 20px auto; /* Added margin for better spacing */
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  display: flex;
+  flex-direction: column; /* Ensure form elements are stacked vertically */
+  gap: 20px; /* Added gap between form elements */
+}
+
+form input,
+form textarea {
+  width: 100%;
+  padding: 12px; /* Ensured padding is equal on all sides */
+  margin-bottom: 10px; /* Reduced margin for better alignment */
+  border: 1px solid #ccc;
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box; /* Include padding in the element's total width and height */
+}
+
+form input:focus,
+form textarea:focus {
+  border-color: var(--primary);
+  outline: none;
+}
+
+form button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 12px 20px;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center; /* Center the button */
+}
+
+form button:hover {
+  background-color: var(--secondary);
+}
+
+
+/* Order-by Buttons */
+.order-by {
+  display: flex;
+  gap: 15px;
+  margin-top: 30px;
+  align-items: center;
+}
+
+.order-by button {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.order-by button.selected {
+  opacity: 1;
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.order-by button:hover {
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Success and Error Messages */
+.success,
+.error {
+  padding: 15px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+.success {
+  background: #28a745;
+  color: #fff;
+}
+
+.error {
+  background: #dc3545;
+  color: #fff;
+}
